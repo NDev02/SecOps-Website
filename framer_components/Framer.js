@@ -44,7 +44,7 @@ export default class Framer {
         Framer.stagedInitFunctions.push(`this.css("${src}")`);
     }
     static isMobileSize() {
-        return (window.innerWidth <= 800);
+        return (document.body.offsetWidth <= 800);
     }
     static createElement(tag, attributes, ...children) {
         if (typeof tag == "function") {

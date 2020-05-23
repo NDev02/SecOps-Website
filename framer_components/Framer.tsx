@@ -115,7 +115,7 @@ export default abstract class Framer {
      */
     static isMobileSize() {
 
-        return (window.innerWidth <= 800);
+        return (document.body.offsetWidth <= 800);
 
     }
 

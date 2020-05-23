@@ -59,6 +59,10 @@
 
 @media(max-width: 800px) {
 
+    .Navigation ul li:nth-child(1) {
+        grid-area: unset;
+    }
+
     .Navigation ul {
         text-align: left;
         height: unset;
@@ -81,7 +85,7 @@
     }
     
     .Navigation.closed ul li:first-child {
-        margin: 0 0.5em;
+        margin: 0 3em;
     }
 
     .Navigation.closed ul li {
