@@ -27,6 +27,7 @@ export default class NavigationBar extends FramerComponent {
         this.expandButton.onclick = this.expandNav.bind(this);
         this.checkMobile();
         window.addEventListener("resize", this.checkMobile.bind(this));
+        setInterval(this.checkMobile.bind(this), 500);
     }
     navigate() {
         let destination = event.target["to"];
