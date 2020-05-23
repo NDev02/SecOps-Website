@@ -1,0 +1,6 @@
+.Router {
+    display: block;
+    width: 100%;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}

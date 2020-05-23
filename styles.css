@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+    --blue: #1E1E57;
+    --red: #B0212B;
+    --primary: white;
+    --primary-color: black;
+    --secondary: ;
+    --secondary-color: ;
+    --nav: white;
+    --nav-color: var(--blue);
+    --nav-hover: var(--red);
+}
+
+html, body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: var(--primary);
+    color: var(--primary-color);
+}
+
+h1,h2 {
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+
+.background-video {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#root {
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 5em auto;
+    /* background-size: cover; */
+    /* background: url(./assets/bg.jpg); */
+    background: #1e1e5728;
+}
+
+.red {
+    color: var(--red);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.heavy {
+    font-weight: bold;
+}
+
+.normal {
+    font-weight: normal;
+}
+
+.img-fill-space {
+    width: 100%;
+}
+
+.Navigation {
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.background {
+    position: fixed;
+    z-index: -10;
+}
+
+.circuit {
+    position: absolute;
+    bottom: -1px;
+    left: 1em;
+    z-index: 0;
+}
+
+.gr3 {
+    display: grid;
+    height: 100%;
+    gap: 1.5em;
+}
+
+.gc2 {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+}
+
+.gst {
+    display: grid;
+    grid-template-rows: 2em auto;
+    gap: 1em;
+}
+
+.grid-top {
+    align-self: center;
+}
+
+.grid-center {
+    align-self: center;
+    margin: 0 auto;
+}
+
+.grid-bottom {
+    align-self: center;
+}
+
+.center {
+    margin: 0 auto;
+    align-self: center;
+}
+
+.HomePage .cover {
+    height: 100%;
+    display: grid;
+    background: #eee;
+    position: relative;
+    scroll-snap-align: center;
+}
+
+.HomePage .cover .center {
+    display: grid;
+    grid-template-areas:
+        'logo first-line'
+        'logo second-line';
+    column-gap: 1em;
+    z-index: 1;
+    animation: fade-in 2s;
+}
+
+.HomePage .cover .center h1 {
+    align-self: end;
+    margin: 0;
+    font-size: 4em;
+    text-align: center;
+    animation: fade-in 1s;
+}
+
+.HomePage .cover .center h2 {
+    align-self: start;
+    margin: 0;
+    font-size: 2em;
+    text-align: center;
+    animation: fade-in 3s;
+}
+
+.HomePage .cover .center .logo {
+    grid-area: logo;
+    max-height: 15em;
+    margin: 0 auto;
+}
+
+.HomePage .cover .circuit:nth-child(1) {
+    top: -2px;
+    left: unset;
+    right: 1em;
+    transform: rotate(180deg);
+}
+
+.fill-vertical {
+    --padding: 2em;
+    --margin: 2em;
+    margin: var(--margin);
+    padding: var(--padding);
+    min-height: calc(100% - var(--padding) * 2 - var(--margin) * 2);
+    background: #eeeeeeee;
+    scroll-snap-align: center;
+    width: 80%;
+    max-width: 1000px;
+    margin: var(--margin) auto;
+}
+
+.fill-vertical p, .fill-vertical li {
+    font-size: 1.2em;
+}
+
+.cut-corner {
+    clip-path: polygon(
+        0% 30px, 
+        30px 0%, 
+        calc(100% - 0px) 0%,
+        100% calc(100% - 30px),
+        calc(100% - 30px) 100%, 
+        0px 100%
+    );
+    /* border-radius: 0.8em; */
+}
+
+.fill-vertical :first-child {
+    margin: 0;
+}
+
+.container {
+    margin: 1em;
+}
+
+.container h1 {
+    color: var(--blue);
+}
+
+.container h1:nth-child(2n) {
+    color: var(--red);
+}
+
+@media(max-width: 800px) {
+
+    .Router {
+        scroll-snap-type: none;
+    }
+
+    .HomePage .cover .center {
+        display: grid;
+        grid-template-areas:
+            'logo'
+            'first-line'
+            'second-line';
+        column-gap: 1em;
+    }
+
+    .HomePage .cover .center h1 {
+        font-size: 2em;
+    }
+
+    .HomePage .cover .center h2 {
+        font-size: 1em;
+    }
+
+    .fill-vertical {
+        --margin: 1em;
+        width: unset;
+        margin: var(--margin);
+    }
+
+    .gst {
+        grid-template-rows: auto 1fr;
+    }
+
+    .gc2 {
+        display: block;
+    }
+
+    .gc2 img:nth-child(2) {
+        display: none;
+    }
+
+}
+
+@keyframes fade-in {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
