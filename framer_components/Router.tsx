@@ -13,6 +13,7 @@ export default class Router extends FramerComponent {
     display(component: FramerComponent): void {
 
         this.clear();
+        this.scrollTo(0, 0);
         this.append(component);
 
     }
